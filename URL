@@ -1,0 +1,23 @@
+# POSIBLE SOLUCION AL EJERCICIO 64 DE https://retosdeprogramacion.com/ejercicios/
+# Dada una URL con parámetros, crea una función que obtenga sus valores.
+# * No se pueden usar operaciones del lenguaje que realicen esta tarea directamente.
+# *
+# * Ejemplo: En la url https://retosdeprogramacion.com?year=2023&challenge=0
+# * los parámetros serían ["2023", "0"]
+
+def parametros(url):
+    #Declaramos las variables
+    parametros = []
+    
+    #Dividimos la url 
+    descomposicion1 = url.split("&")
+    for trozo in descomposicion1:
+        if "=" in trozo:
+            #Hacemos una segunda division
+            descomposicion2 = trozo.split("=")
+                
+        if len(descomposicion2) == 2 and descomposicion2[1] != "" and descomposicion2[0] != "languaje":
+                parametros.append(descomposicion2[1])
+                
+    
+    return parametros
